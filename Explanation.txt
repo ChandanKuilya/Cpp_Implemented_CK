@@ -1,6 +1,6 @@
 Considering this problem an open ended one,there are some assumptions worth mentioning:
 
-i) Abhmanyu can recharge himself with power b times→With ‘how much power’ he can recharge himself b times…is it the p power again? 
+i) Abhimanyu can recharge himself with power b times→With ‘how much power’ he can recharge himself b times…is it the p power again? 
 Rather here I took a certain amount of power ‘pw’,that he can recharge himself b times.
 
 Solution: 
