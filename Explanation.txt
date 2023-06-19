@@ -1,0 +1,72 @@
+Considering this problem an open ended one,there are some assumptions worth mentioning:
+
+i) Abhmanyu can recharge himself with power b times→With ‘how much power’ he can recharge himself b times…is it the p power again? 
+Rather here I took a certain amount of power ‘pw’,that he can recharge himself b times.
+
+Solution: 
+
+The Algorithmic flow will be as follows: 
+     
+Initialize currentPower to p, representing Abhimanyu's current power.
+Initialize skipCount to a, representing the number of times Abhimanyu can skip battling.
+Initialize rechargeCount to b, representing the number of times Abhimanyu can recharge.
+  Iterate through the 11 enemy powers using a for loop:
+a. Check if Abhimanyu's current power is less than the current enemy power. If true, return false indicating that Abhimanyu loses the battle.
+b. Check if skipCount is greater than 0. If true, check if skipping the current battle is valid (i.e., if skipping won't make Abhimanyu's power less than the next enemy power). If valid, decrement skipCount and continue to the next iteration.
+c. If skipping is not possible or skipCount is 0, deduct the current enemy power from currentPower.
+d. If rechargeCount is greater than 0 and there are more battles remaining (i.e., not at the last enemy), recharge Abhimanyu's power by the amount pw and decrement rechargeCount.
+e. If the current enemy index is 3 or 7 (representing k4 and k8 respectively), deduct half of the previous enemy's power from currentPower. This simulates the attack from behind by the regeneration enemies.
+If the loop completes without returning False, Abhimanyu successfully crosses the Chakravyuha. Return True.
+
+
+
+
+ // Test cases:
+    // Test Case 1
+    int p1 = 20;
+    int a1 = 2;
+    int b1 = 1;
+    int pw1=13;
+    cout << "Test Case 1: " << (possibilityOfCrossing(p1, a1, b1,pw1,arr) ? "Yes" : "No") << '\n' ;
+     //int arr1[11]={10,9,8,7,12,1,5,11,4,3,2}; gives "NO" output i.e Abhimanyu can not cross the Chakravyuh.
+
+
+    // Test Case 2
+    int p2 = 80;
+    int a2 = 1;
+    int b2 = 0;
+    int pw2=20;
+    cout << "Test Case 2: " << (possibilityOfCrossing(p2, a2, b2,pw2,arr) ? "Yes" : "No") << '\n' ;
+    //int arr2[11]={10,9,8,7,12,1,5,11,4,3,2};  gives "Yes" output i.e Abhimanyu can cross the Chakravyuh.
+
+
+    // Test Case 3
+    int p3 = 150;
+    int a3 = 3;
+    int b3 = 2;
+    int pw3=40;
+    cout << "Test Case 3: " << (possibilityOfCrossing(p3, a3, b3,pw3,arr) ? "Yes" : "No") << '\n' ;
+      // int arr3[11]={10,9,8,7,12,1,5,11,4,3,2}; gives "Yes" output i.e Abhimanyu can cross the Chakravyuh.
+
+
+    // Test Case 4
+    int p4 = 25;
+    int a4 = 1;
+    int b4 = 2;
+    int pw4=5;
+    cout << "Test Case 4: " << (possibilityOfCrossing(p4, a4, b4,pw4,arr) ? "Yes" : "No") << '\n' ;
+      // int arr4[11]={10,9,8,7,12,1,5,11,4,3,2}; gives "No" output i.e Abhimanyu can not cross the Chakravyuh.
+
+
+
+
+Output: 
+Enter the powers of enemies from k1 to k11: 
+10 9 8 7 12 1 5 11 4 3 2
+Test Case 1: No
+Test Case 2: Yes
+Test Case 3: Yes
+Test Case 4: No
+
+
+
